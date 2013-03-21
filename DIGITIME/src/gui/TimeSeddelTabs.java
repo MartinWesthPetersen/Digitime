@@ -13,8 +13,8 @@ public class TimeSeddelTabs extends JTabbedPane {
 	public TimeSeddelTabs() {
 		super();
 		this.addTab("Hejsa", new TimeSeddelPanel());
-		this.addTab("Hejsa", new JLabel("hejksdfsdfl"));
-		this.addTab("Hejsa", new JLabel("hejkæææææææææææææl"));
+		this.addTab("Hovsa v 2", new JLabel("hejksdfsdfl"));
+		System.out.println("nejnejnje");
 		this.setBounds(0, 0, 760, 400);
 	}
 }
