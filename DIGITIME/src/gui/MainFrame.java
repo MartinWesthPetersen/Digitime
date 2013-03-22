@@ -1,5 +1,7 @@
 package gui;
 
+import java.awt.Color;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -17,6 +19,7 @@ public class MainFrame extends JFrame {
 		this.setLayout(null);
 		this.setResizable(false);
 		this.add(LocalPanel.instance);
+		this.setBackground(Color.green);
 	
 	}
 }

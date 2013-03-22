@@ -16,13 +16,15 @@ public class TimeSeddel extends JTable {
 	public TimeSeddel(int row, int col) {
 		super(row,col);
 		this.setCellSelectionEnabled(true);
-		this.setBounds(0, 50, 750, 320);
-		Border blackline = BorderFactory.createLineBorder(Color.blue);
-		this.setBorder(blackline);
+		this.setBounds(0, 80, 755, 322);
+//		Border blackline = BorderFactory.createLineBorder(Color.blue);
+//		this.setBorder(blackline);
+		this.setAutoResizeMode(JTable.AUTO_RESIZE_LAST_COLUMN);
+
 	}
 	
 	public void paint(Graphics g) {
-		this.getColumnModel().getColumn(0).setWidth(390);
+		this.getColumnModel().getColumn(0).setWidth(364);
 		this.getColumnModel().getColumn(1).setWidth(60);
 		this.getColumnModel().getColumn(2).setWidth(60);
 		this.getColumnModel().getColumn(3).setWidth(60);

@@ -1,6 +1,7 @@
 package gui;
 
 import javax.swing.JLabel;
+import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
 
@@ -13,8 +14,8 @@ public class TimeSeddelTabs extends JTabbedPane {
 	public TimeSeddelTabs() {
 		super();
 		this.addTab("Hejsa", new TimeSeddelPanel());
-		this.addTab("Hovsa v 2", new JLabel("hejksdfsdfl"));
-		System.out.println("nejnejnje");
-		this.setBounds(0, 0, 760, 400);
+		this.addTab("Hovsa v 2", new JLabel("uhuhhuuh"));
+		this.addTab("Hejsa", new JLabel("hejkeeeeeeel"));
+		this.setBounds(0, 0, 760, 440);
 	}
 }
