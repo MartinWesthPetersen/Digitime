@@ -54,6 +54,9 @@ public class TimeSeddelPanel extends JPanel {
 		JTextArea sag = new JTextArea();
 		sag.setSize(300, 50);
 		sag.setBounds(50, 15, 300, 50);
+		JScrollPane scroll = new JScrollPane(sag);
+		scroll.setVisible(true);
+		scroll.setBounds(50, 15, 300, 50);
 		Border liniesag = BorderFactory.createLineBorder(Color.black);
 		sag.setBorder(liniesag);
 
@@ -98,7 +101,7 @@ public class TimeSeddelPanel extends JPanel {
 		disp.setBounds(690, 70, 50, 30);
 		
 
-		this.add(sag);
+		this.add(scroll);
 		this.add(sagtext);
 		this.add(kunde);
 		this.add(kundetext);

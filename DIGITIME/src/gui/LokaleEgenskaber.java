@@ -26,7 +26,7 @@ public class LokaleEgenskaber extends JFrame {
 		lokegn.setBackground(Color.white);
 		lokegn.setLayout(null);
 		
-		JLabel min = new JLabel("Slå beregning i hele kvarter til:");
+		JLabel min = new JLabel("Slaa beregning i hele kvarter til:");
 		min.setBounds(30, 30, 200, 30);
 		min.setFont(new Font("sansserif",Font.PLAIN,15));
 		lokegn.add(min);
@@ -36,7 +36,7 @@ public class LokaleEgenskaber extends JFrame {
 		minbox.setBackground(Color.white);
 		lokegn.add(minbox);
 		
-		JLabel takst = new JLabel("Sæt timetakst:");
+		JLabel takst = new JLabel("Saet timetakst:");
 		takst.setBounds(30, 90, 200, 30);
 		takst.setFont(new Font("sansserif",Font.PLAIN,15));
 		lokegn.add(takst);
