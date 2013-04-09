@@ -15,7 +15,8 @@ import javax.swing.border.Border;
 public class TimeSeddelPanel extends JPanel {
 
 	private static final long serialVersionUID = 1L;
-	
+	private JScrollPane vertical;
+	private TimeSeddel console;
 
 	public TimeSeddelPanel() {
 		super();
@@ -51,27 +52,18 @@ public class TimeSeddelPanel extends JPanel {
 		sag.setBorder(liniesag);
 
 		JLabel kundetext = new JLabel("KUNDE:");
-		kundetext.setBounds(360, 12, 60, 20);
-		JTextField kunde = new JTextField();
+		kundetext.setBounds(400, 30, 60, 20);
+		JTextArea kunde = new JTextArea();
 		kunde.setSize(100, 50);
-		kunde.setBounds(425, 10, 150, 25);
+		kunde.setBounds(450, 15, 100, 50);
 		Border liniekunde = BorderFactory.createLineBorder(Color.black);
 		kunde.setBorder(liniekunde);
-		
-
-		JLabel kontakttext = new JLabel("KONTAKT:");
-		kontakttext.setBounds(360, 42, 60, 20);
-		JTextField kontakt = new JTextField();
-		kontakt.setSize(100, 50);
-		kontakt.setBounds(425, 40, 150, 25);
-		Border liniekontakt = BorderFactory.createLineBorder(Color.black);
-		kontakt.setBorder(liniekontakt);
 
 		JLabel pristext = new JLabel("PRIS:");
-		pristext.setBounds(586, 28, 60, 20);
-		JTextField pris = new JTextField();
-		pris.setSize(150, 20);
-		pris.setBounds(625, 25, 120, 25);
+		pristext.setBounds(570, 30, 60, 20);
+		JTextArea pris = new JTextArea();
+		pris.setSize(100, 50);
+		pris.setBounds(610, 15, 100, 50);
 		Border liniepris = BorderFactory.createLineBorder(Color.black);
 		pris.setBorder(liniepris);
 		
@@ -104,7 +96,5 @@ public class TimeSeddelPanel extends JPanel {
 		this.add(timer);
 		this.add(kroner);
 		this.add(disp);
-		this.add(kontakttext);
-		this.add(kontakt);
 	}
 }

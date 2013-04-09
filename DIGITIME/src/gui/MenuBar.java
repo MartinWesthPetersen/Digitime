@@ -13,30 +13,17 @@ public final class MenuBar extends JMenuBar {
 	public MenuBar() {
 		super();
 		this.add(addFileMenu());
-		this.add(addRedigerMenu());
 	}
 	
 	private JMenu addFileMenu() {
-		JMenu menu = new JMenu("Filer");
+		JMenu menu = new JMenu("File");
 		menu.add(this.addExitItem());
 		menu.add(this.addLoadItem());
 		return menu;
 	}
 	
-	private JMenu addRedigerMenu() {
-		JMenu menu2 = new JMenu("Rediger");
-		menu2.add(this.addKunderItem());
-		return menu2;
-	}
-	
-	private JMenuItem addKunderItem() {
-		JMenuItem menuitem = new JMenuItem("Kunder");
-		menuitem.addActionListener(KunderListener.instance);
-		return menuitem;
-	}
-
 	private JMenuItem addExitItem() {
-		JMenuItem menuitem = new JMenuItem("Luk");
+		JMenuItem menuitem = new JMenuItem("Exit");
 		return menuitem;
 	}
 	
@@ -44,6 +31,5 @@ public final class MenuBar extends JMenuBar {
 		JMenuItem menuitem = new JMenuItem("Load");
 		return menuitem;
 	}
-	
 	
 }
