@@ -21,16 +21,28 @@ public class LocalPanel extends JPanel {
 		this.setBackground(Color.white);
 		Border blackline = BorderFactory.createRaisedBevelBorder();
 		this.setBorder(blackline);
+<<<<<<< HEAD
+		this.setBounds(20, 0, 760, 500);
+=======
 		this.setBounds(20, 0, 760, 495);
+>>>>>>> 48d27c48c6edef1206feffc5f84d1efd56bc2adb
 		
 		this.add(TimeSeddelTabs.instance);
 		
 		JButton startstop = new JButton("Start/Stop");
+<<<<<<< HEAD
+		startstop.setBounds(600, 455, 100, 30);
+		this.add(startstop);
+		
+		JButton lokaleegenskaber = new JButton("Lokale egenskaber");
+		lokaleegenskaber.setBounds(40, 455, 150, 30);
+=======
 		startstop.setBounds(600, 453, 100, 30);
 		this.add(startstop);
 		
 		JButton lokaleegenskaber = new JButton("Lokale egenskaber");
 		lokaleegenskaber.setBounds(40, 453, 150, 30);
+>>>>>>> 48d27c48c6edef1206feffc5f84d1efd56bc2adb
 		lokaleegenskaber.addActionListener(LokaleEgenskaberListener.instance);
 		this.add(lokaleegenskaber);
 	}

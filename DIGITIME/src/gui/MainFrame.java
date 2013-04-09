@@ -2,7 +2,10 @@ package gui;
 
 import java.awt.Color;
 
+<<<<<<< HEAD
+=======
 import javax.swing.JButton;
+>>>>>>> 48d27c48c6edef1206feffc5f84d1efd56bc2adb
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -21,11 +24,14 @@ public class MainFrame extends JFrame {
 		this.setResizable(false);
 		this.add(LocalPanel.instance);
 		this.setBackground(Color.green);
+<<<<<<< HEAD
+=======
 		
 		JButton globaleegenskaber = new JButton("Globale egenskaber");
 		globaleegenskaber.setBounds(60, 507, 150, 30);
 		globaleegenskaber.addActionListener(GlobaleEgenskaberListener.instance);
 		this.add(globaleegenskaber);
+>>>>>>> 48d27c48c6edef1206feffc5f84d1efd56bc2adb
 	
 	}
 }
