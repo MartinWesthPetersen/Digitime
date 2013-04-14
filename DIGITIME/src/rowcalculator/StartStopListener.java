@@ -1,5 +1,7 @@
 package rowcalculator;
 
+import gui.DescriptionWizard;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -11,7 +13,7 @@ public class StartStopListener implements ActionListener {
 	
 	public void actionPerformed(ActionEvent arg0) {
 		if(start) {
-			StartActions.instance.calculate();
+			DescriptionWizard.instance.setVisible(true);
 			this.start = false;
 		}
 		else {
@@ -19,5 +21,4 @@ public class StartStopListener implements ActionListener {
 			this.start = true;
 		}
 	}
-
 }

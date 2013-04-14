@@ -2,6 +2,7 @@ package gui;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.ScrollPane;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -12,9 +13,16 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.Border;
 
+import rowcalculator.StartStopListener;
+
 public class TimeSeddelPanel extends JPanel {
 
 	private static final long serialVersionUID = 1L;
+	
+	private TimeSeddel seddel;
+	private JScrollPane scrollPane;
+	private JTextField pris;
+	public int rowcounter = 0;
 	
 
 	public TimeSeddelPanel() {
@@ -24,13 +32,12 @@ public class TimeSeddelPanel extends JPanel {
 //		Border blackline = BorderFactory.createLineBorder(Color.red);
 //		this.setBorder(blackline);
 		
-		TimeSeddel seddel = new TimeSeddel(23,7);
+		this.seddel = new TimeSeddel();
 		seddel.setTableHeader(null);
-		JScrollPane scrollPane = new JScrollPane(seddel);
+		this.scrollPane = new JScrollPane(seddel);
 		scrollPane.setBounds(10, 100, 742, 312);
 		scrollPane.setVisible(true);
-		
-		this.add(scrollPane);
+		this.add(scrollPane);	
 		
 		
 //		setPreferredSize(new Dimension(200, 250));
@@ -69,7 +76,7 @@ public class TimeSeddelPanel extends JPanel {
 
 		JLabel pristext = new JLabel("PRIS:");
 		pristext.setBounds(586, 28, 60, 20);
-		JTextField pris = new JTextField();
+		this.pris = new JTextField();
 		pris.setSize(150, 20);
 		pris.setBounds(625, 25, 120, 25);
 		Border liniepris = BorderFactory.createLineBorder(Color.black);
@@ -106,5 +113,13 @@ public class TimeSeddelPanel extends JPanel {
 		this.add(disp);
 		this.add(kontakttext);
 		this.add(kontakt);
+	}
+	
+	public TimeSeddel getTimeSeddel() {
+		return this.seddel;
+	}
+	
+	public JTextField getPris() {
+		return this.pris;
 	}
 }

@@ -14,8 +14,8 @@ public class TimeSeddelTabs extends JTabbedPane {
 	public TimeSeddelTabs() {
 		super();
 		this.addTab("Hejsa", new TimeSeddelPanel());
-		this.addTab("Hovsa v 2", new JLabel("uhuhhuuh"));
-		this.addTab("Hejsa", new JLabel("hejkeeeeeeel"));
+		this.addTab("Hovsa v 2", new TimeSeddelPanel());
+		this.addTab("Hejsa", new TimeSeddelPanel());
 		this.setBounds(0, 0, 760, 440);
 	}
 }
