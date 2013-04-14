@@ -20,6 +20,7 @@ public final class MenuBar extends JMenuBar {
 		JMenu menu = new JMenu("Filer");
 		menu.add(this.addExitItem());
 		menu.add(this.addLoadItem());
+		menu.add(this.addNySeddelItem());
 		return menu;
 	}
 	
@@ -42,6 +43,12 @@ public final class MenuBar extends JMenuBar {
 	
 	private JMenuItem addLoadItem() {
 		JMenuItem menuitem = new JMenuItem("Load");
+		return menuitem;
+	}
+	
+	private JMenuItem addNySeddelItem() {
+		JMenuItem menuitem = new JMenuItem("Ny TimeSeddel");
+		menuitem.addActionListener(NyTimeSeddelListener.instance);
 		return menuitem;
 	}
 	

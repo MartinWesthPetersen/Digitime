@@ -44,12 +44,17 @@ public class SlutActions {
 
 		ArrayList<RowInfo> rows = panel.getTimeSeddel().getRowInfos();
 		int totalkroner = 0;
-		if(rows.isEmpty()) {
+		if(! rows.isEmpty()) {
+			System.out.println("ikketom");
 			for(RowInfo row: rows) {
-				totalkroner += Integer.parseInt(row.getKroner());
+				if(row.getKroner() != null) {
+					totalkroner += Integer.parseInt(row.getKroner());
+				}
 			}
 		}
+		totalkroner += Integer.parseInt(this.kroner);
 		this.dispbeløb = Integer.parseInt(panel.getPris().getText()) - totalkroner + "";
+		System.out.println(totalkroner);
 
 		panel.getTimeSeddel().insertSlutPart(this.time, this.timedifference, this.kroner, this.dispbeløb);
 

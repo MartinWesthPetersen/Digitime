@@ -27,4 +27,9 @@ public class Application {
 		return this.currentseddelpanel;
 	}
 	
+	public void insertNyTimeSeddelPanel(TimeSeddelPanel panel) {
+		this.timeseddelpaneler.add(panel);
+		this.setCurrentSeddel();
+	}
+	
 }

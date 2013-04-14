@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+import appliction.Application;
 import appliction.RowInfo;
 
 public class TimeSeddel extends JTable {

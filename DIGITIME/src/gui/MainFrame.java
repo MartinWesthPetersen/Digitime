@@ -20,7 +20,7 @@ public class MainFrame extends JFrame {
 		this.setLayout(null);
 		this.setResizable(false);
 		this.add(LocalPanel.instance);
-		this.setBackground(Color.green);
+		this.setBackground(Color.red);
 		
 		JButton globaleegenskaber = new JButton("Globale egenskaber");
 		globaleegenskaber.setBounds(60, 507, 150, 30);

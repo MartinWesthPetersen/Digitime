@@ -26,6 +26,7 @@ public class LocalPanel extends JPanel {
 		this.setBounds(20, 0, 760, 495);
 		
 		this.add(TimeSeddelTabs.instance);
+		TimeSeddelTabs.instance.insertNyTimeseddel();
 		
 		JButton startstop = new JButton("Start/Stop");
 		startstop.setBounds(600, 453, 100, 30);
