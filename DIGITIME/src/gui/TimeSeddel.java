@@ -31,6 +31,7 @@ public class TimeSeddel extends JTable {
 //		Border blackline = BorderFactory.createLineBorder(Color.blue);
 //		this.setBorder(blackline);
 		this.setAutoResizeMode(JTable.AUTO_RESIZE_LAST_COLUMN);
+		this.takst = "";
 
 	}
 	

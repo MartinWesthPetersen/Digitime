@@ -15,6 +15,8 @@ public class GlobaleEgenskaber extends JFrame {
 
 	public static final GlobaleEgenskaber instance = new GlobaleEgenskaber();
 	
+	private JTextField takstfield;
+	
 	public GlobaleEgenskaber() {
 		this.setSize(400, 300);
 		this.setLocationRelativeTo(null);
@@ -29,10 +31,14 @@ public class GlobaleEgenskaber extends JFrame {
 		standardtakst.setFont(new Font("sansserif",Font.PLAIN,15));
 		gloegn.add(standardtakst);
 		
-		JTextField takstfield = new JTextField();
+		this.takstfield = new JTextField();
 		takstfield.setBounds(250, 30, 80, 30);
 		gloegn.add(takstfield);
 			
 		this.add(gloegn);
+	}
+	
+	public JTextField getTextField() {
+		return this.takstfield;
 	}
 }

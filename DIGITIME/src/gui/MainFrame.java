@@ -32,7 +32,7 @@ public class MainFrame extends JFrame {
 		this.statuslabel = new JLabel("");
 		statuslabel.setFont(new Font("Arial", Font.PLAIN, 16));
 		statuslabel.setForeground(Color.red);
-		statuslabel.setBounds(350, 507, 200, 30);
+		statuslabel.setBounds(350, 507, 300, 30);
 		this.add(statuslabel);
 	
 	}

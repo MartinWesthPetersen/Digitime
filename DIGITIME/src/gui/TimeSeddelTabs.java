@@ -19,8 +19,12 @@ public class TimeSeddelTabs extends JTabbedPane {
 	}
 	
 	public void insertNyTimeseddel() {
+		NewTabWizard.instance.setVisible(true);
+	}
+	
+	public void insertNyTimeseddel(final String tabname) {
 		TimeSeddelPanel panel = new TimeSeddelPanel();
-		this.addTab("Timeseddel", panel);
+		this.addTab(tabname, panel);
 		Application.instance.insertNyTimeSeddelPanel(panel);
 	}
 }
