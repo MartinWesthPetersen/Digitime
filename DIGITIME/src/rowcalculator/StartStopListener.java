@@ -8,17 +8,25 @@ import java.awt.event.ActionListener;
 public class StartStopListener implements ActionListener {
 
 	public static final StartStopListener instance = new StartStopListener();
-	
-	private boolean start = true;
-	
+
+	public boolean start = true;
+
 	public void actionPerformed(ActionEvent arg0) {
+		System.out.println(this.start);
 		if(start) {
 			DescriptionWizard.instance.setVisible(true);
-			this.start = false;
+			if(this.start) {
+				this.start = false;
+			}
 		}
 		else {
 			SlutActions.instance.calculate();
-			this.start = true;
+			if(! this.start) {
+				this.start = true;
+			}
+			else {
+				this.start = false;
+			}
 		}
 	}
 }

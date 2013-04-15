@@ -1,5 +1,6 @@
 package rowcalculator;
 
+import gui.MainFrame;
 import gui.TimeSeddel;
 import gui.TimeSeddelPanel;
 
@@ -53,10 +54,16 @@ public class SlutActions {
 			}
 		}
 		totalkroner += Integer.parseInt(this.kroner);
-		this.dispbeløb = Integer.parseInt(panel.getPris().getText()) - totalkroner + "";
-		System.out.println(totalkroner);
+		
+		try {
+			this.dispbeløb = Integer.parseInt(panel.getPris().getText()) - totalkroner + "";
+			panel.getTimeSeddel().insertSlutPart(this.time, this.timedifference, this.kroner, this.dispbeløb);
+		}
+		catch (NumberFormatException e) {
+			MainFrame.instance.printStatus("Korrekt pris skal indsættes");
+			StartStopListener.instance.start = true;
+		}
 
-		panel.getTimeSeddel().insertSlutPart(this.time, this.timedifference, this.kroner, this.dispbeløb);
 
 	}
 
