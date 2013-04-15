@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 
 public class Kunder extends JFrame {
 
@@ -23,11 +24,15 @@ public class Kunder extends JFrame {
 		panel.setBackground(Color.white);
 		
 		Kundeliste liste = new Kundeliste(30,1);
+		KundeInfo info = new KundeInfo(100);
 		liste.setTableHeader(null);
-		JScrollPane scroll = new JScrollPane(liste);
+		JScrollPane scroll = new JScrollPane(liste)	;
+		JTextField kundeInfo = new JTextField();
+		kundeInfo.setVisible(true);
 		scroll.setVisible(true);
 		scroll.setBounds(0, 0, 200, 374);
 		panel.add(scroll);
+		panel.add(kundeInfo);
 		
 		
 		

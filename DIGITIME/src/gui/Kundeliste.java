@@ -10,7 +10,7 @@ public class Kundeliste extends JTable {
 	public Kundeliste(int row, int col) {
 		super(row,col);
 		this.setCellSelectionEnabled(true);
-		this.setBounds(0, 0, 300, 400);
+		this.setBounds(0, 0, 600, 400);
 		this.setCellSelectionEnabled(true);
 
 //		Border blackline = BorderFactory.createLineBorder(Color.blue);
