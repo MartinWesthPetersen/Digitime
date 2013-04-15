@@ -3,6 +3,7 @@ package gui;
 import java.awt.Color;
 import java.awt.Font;
 
+import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -14,6 +15,8 @@ public class LokaleEgenskaber extends JFrame {
 	private static final long serialVersionUID = 1L;
 	
 	public static final LokaleEgenskaber instance = new LokaleEgenskaber();
+	
+	public JTextField takstfield;
 	
 	public LokaleEgenskaber() {
 		this.setSize(400, 300);
@@ -38,9 +41,14 @@ public class LokaleEgenskaber extends JFrame {
 		takst.setFont(new Font("sansserif",Font.PLAIN,15));
 		lokegn.add(takst);
 		
-		JTextField takstfield = new JTextField();
+		this.takstfield = new JTextField();
 		takstfield.setBounds(250, 90, 80, 30);
 		lokegn.add(takstfield);
+		
+		JButton okbutton = new JButton("OK");
+		okbutton.setBounds(30, 120, 80, 30);
+		okbutton.addActionListener(LokegnOkButtonListener.instance);
+		lokegn.add(okbutton);
 		
 		
 		this.add(lokegn);
