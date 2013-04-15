@@ -12,7 +12,6 @@ public class StartStopListener implements ActionListener {
 	public boolean start = true;
 
 	public void actionPerformed(ActionEvent arg0) {
-		System.out.println(this.start);
 		if(start) {
 			DescriptionWizard.instance.setVisible(true);
 			if(this.start) {
