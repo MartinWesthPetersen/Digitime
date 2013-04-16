@@ -62,7 +62,7 @@ public class RowInfo {
 		this.kroner = kroner;
 	}
 
-	public String getDispbeløb() {
+	public String getDispbeloeb() {
 		return dispbeloeb;
 	}
 
