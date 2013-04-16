@@ -61,16 +61,16 @@ public class TimeSeddel extends JTable {
 	}
 	
 	public void insertSlutPart(final String sluttid, final String tidsdifference, 
-			final String kroner, final String dispbeløb) {
+			final String kroner, final String dispbeloeb) {
 		this.rows.get(rowcounter).setSluttid(sluttid);
 		this.rows.get(rowcounter).setTiddifference(tidsdifference);
 		this.rows.get(rowcounter).setKroner(kroner);
-		this.rows.get(rowcounter).setDispbeløb(dispbeløb);
+		this.rows.get(rowcounter).setDispbeloeb(dispbeloeb);
 		
 		this.setValueAt(sluttid, rowcounter, 3);
 		this.setValueAt(tidsdifference, rowcounter, 4);
 		this.setValueAt(kroner, rowcounter, 5);
-		this.setValueAt(dispbeløb, rowcounter, 6);
+		this.setValueAt(dispbeloeb, rowcounter, 6);
 		this.rowcounter++;
 	}
 	

@@ -8,7 +8,7 @@ public class RowInfo {
 	private String sluttid;
 	private String tiddifference;
 	private String kroner;
-	private String dispbeløb;
+	private String dispbeloeb;
 	
 	public RowInfo() {
 		
@@ -62,12 +62,12 @@ public class RowInfo {
 		this.kroner = kroner;
 	}
 
-	public String getDispbeløb() {
-		return dispbeløb;
+	public String getDispbel�b() {
+		return dispbeloeb;
 	}
 
-	public void setDispbeløb(String dispbeløb) {
-		this.dispbeløb = dispbeløb;
+	public void setDispbeloeb(String dispbeloeb) {
+		this.dispbeloeb = dispbeloeb;
 	}
 	
 }

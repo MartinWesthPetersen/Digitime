@@ -20,7 +20,7 @@ public class SlutActions {
 	private String time;
 	private String timedifference;
 	private String kroner;
-	private String dispbeløb;
+	private String dispbeloeb;
 
 	public SlutActions() {
 
@@ -72,8 +72,8 @@ public class SlutActions {
 		totalkroner += Integer.parseInt(this.kroner);
 
 		try {
-			this.dispbeløb = Integer.parseInt(panel.getPris().getText()) - totalkroner + "";
-			panel.getTimeSeddel().insertSlutPart(this.time, this.timedifference, this.kroner, this.dispbeløb);
+			this.dispbeloeb = Integer.parseInt(panel.getPris().getText()) - totalkroner + "";
+			panel.getTimeSeddel().insertSlutPart(this.time, this.timedifference, this.kroner, this.dispbeloeb);
 			MainFrame.instance.printStatus("");
 		}
 		catch (NumberFormatException e) {
