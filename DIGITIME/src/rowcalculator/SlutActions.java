@@ -40,44 +40,50 @@ public class SlutActions {
 		TimeSeddelPanel panel = Application.instance.getCurrentSeddelPanel();
 		int takst = 0;
 
-		if(panel.getTimeSeddel().getTakst() != "") {
-			takst = Integer.parseInt(panel.getTimeSeddel().getTakst());
-		}
-		else {
-			if(Settings.instance.getStandardtakst() != "") {
-				takst = Integer.parseInt(Settings.instance.getStandardtakst());
+		try {
+			if(panel.getTimeSeddel().getTakst() != "") {
+				takst = Integer.parseInt(panel.getTimeSeddel().getTakst());
 			}
 			else {
-				MainFrame.instance.printStatus("Korrekt global eller lokal timetakst skal indskrives");
-				StartStopListener.instance.start = true;
-				return;
-			}
-		}
-		MainFrame.instance.printStatus("");
-		int heletimerikroner = (Integer.parseInt(this.timedifference.substring(0, 2)) * takst);
-		int minutterikroner = (Integer.parseInt(this.timedifference.substring(3, 5)) *
-				(takst / 60));
-		this.kroner = heletimerikroner + minutterikroner + "";
-
-		ArrayList<RowInfo> rows = panel.getTimeSeddel().getRowInfos();
-		int totalkroner = 0;
-		if(! rows.isEmpty()) {
-			System.out.println("ikketom");
-			for(RowInfo row: rows) {
-				if(row.getKroner() != null) {
-					totalkroner += Integer.parseInt(row.getKroner());
+				if(Settings.instance.getStandardtakst() != "") {
+					takst = Integer.parseInt(Settings.instance.getStandardtakst());
+				}
+				else {
+					MainFrame.instance.printStatus("Korrekt global eller lokal timetakst skal indskrives");
+					StartStopListener.instance.start = true;
+					return;
 				}
 			}
-		}
-		totalkroner += Integer.parseInt(this.kroner);
-
-		try {
-			this.dispbeloeb = Integer.parseInt(panel.getPris().getText()) - totalkroner + "";
-			panel.getTimeSeddel().insertSlutPart(this.time, this.timedifference, this.kroner, this.dispbeloeb);
 			MainFrame.instance.printStatus("");
+			int heletimerikroner = (Integer.parseInt(this.timedifference.substring(0, 2)) * takst);
+			int minutterikroner = (Integer.parseInt(this.timedifference.substring(3, 5)) *
+					(takst / 60));
+			this.kroner = heletimerikroner + minutterikroner + "";
+
+			ArrayList<RowInfo> rows = panel.getTimeSeddel().getRowInfos();
+			int totalkroner = 0;
+			if(! rows.isEmpty()) {
+				System.out.println("ikketom");
+				for(RowInfo row: rows) {
+					if(row.getKroner() != null) {
+						totalkroner += Integer.parseInt(row.getKroner());
+					}
+				}
+			}
+			totalkroner += Integer.parseInt(this.kroner);
+
+			try {
+				this.dispbeloeb = Integer.parseInt(panel.getPris().getText()) - totalkroner + "";
+				panel.getTimeSeddel().insertSlutPart(this.time, this.timedifference, this.kroner, this.dispbeloeb);
+				MainFrame.instance.printStatus("");
+			}
+			catch (NumberFormatException e) {
+				MainFrame.instance.printStatus("Korrekt pris skal indskrives");
+				StartStopListener.instance.start = true;
+			}
 		}
 		catch (NumberFormatException e) {
-			MainFrame.instance.printStatus("Korrekt pris skal indskrives");
+			MainFrame.instance.printStatus("Korrekt global eller lokal timetakst skal indskrives");
 			StartStopListener.instance.start = true;
 		}
 
