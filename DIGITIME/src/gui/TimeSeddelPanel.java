@@ -21,7 +21,10 @@ public class TimeSeddelPanel extends JPanel {
 	
 	private TimeSeddel seddel;
 	private JScrollPane scrollPane;
-	private JTextField pris;
+	public JTextArea sag;
+	public JTextField kunde;
+	public JTextField kontakt;
+	public JTextField pris;
 	public int rowcounter = 0;
 	
 
@@ -51,7 +54,7 @@ public class TimeSeddelPanel extends JPanel {
 
 		JLabel sagtext = new JLabel("SAG:");
 		sagtext.setBounds(10, 30, 40, 20);
-		JTextArea sag = new JTextArea();
+		this.sag = new JTextArea();
 		sag.setSize(300, 50);
 		sag.setBounds(50, 15, 300, 50);
 		JScrollPane scroll = new JScrollPane(sag);
@@ -62,7 +65,7 @@ public class TimeSeddelPanel extends JPanel {
 
 		JLabel kundetext = new JLabel("KUNDE:");
 		kundetext.setBounds(360, 12, 60, 20);
-		JTextField kunde = new JTextField();
+		this.kunde = new JTextField();
 		kunde.setSize(100, 50);
 		kunde.setBounds(425, 10, 150, 25);
 		Border liniekunde = BorderFactory.createLineBorder(Color.black);
@@ -71,7 +74,7 @@ public class TimeSeddelPanel extends JPanel {
 
 		JLabel kontakttext = new JLabel("KONTAKT:");
 		kontakttext.setBounds(360, 42, 60, 20);
-		JTextField kontakt = new JTextField();
+		this.kontakt = new JTextField();
 		kontakt.setSize(100, 50);
 		kontakt.setBounds(425, 40, 150, 25);
 		Border liniekontakt = BorderFactory.createLineBorder(Color.black);
