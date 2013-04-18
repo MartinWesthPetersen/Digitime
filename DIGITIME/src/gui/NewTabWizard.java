@@ -25,7 +25,7 @@ public class NewTabWizard extends JFrame {
 		panel.setLayout(null);
 		panel.setVisible(true);
 		
-		JLabel label = new JLabel("Navn på tab:");
+		JLabel label = new JLabel("Navn pÃ¥ tab:");
 		label.setBounds(30, 40, 150, 30);
 		panel.add(label);
 		
