@@ -13,6 +13,7 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 
 import listeners.KundeNyListener;
+import listeners.KundeRedigerListener;
 
 public class Kunder extends JFrame {
 
@@ -42,7 +43,7 @@ public class Kunder extends JFrame {
 		
 		JButton redigerButton = new JButton("Rediger");
 		redigerButton.setBounds(200,354,150,20);
-		redigerButton.addActionListener(LokegnOkButtonListener.instance);
+		redigerButton.addActionListener(KundeRedigerListener.instance);
 		panel.add(redigerButton);
 		
 		JButton nyButton = new JButton("Ny Kunde");
