@@ -36,12 +36,17 @@ public class LoadCommand {
 			panel.kontakt.setText(this.decrypt(this.loadinfo));
 			panel.pris.setText(this.decrypt(this.loadinfo));
 			TimeSeddelTabs.instance.addTab(filename, panel);
+			int tabindex = TimeSeddelTabs.instance.indexOfTab(filename);
+			TimeSeddelTabs.instance.setSelectedIndex(tabindex);
+			panel.repaint();
 			Application.instance.insertNyTimeSeddelPanel(panel);
 			
 			TimeSeddel seddel = Application.instance.getCurrentSeddelPanel().getTimeSeddel();
-			while(this.loadinfo.equals("")) {
+			while(! this.loadinfo.equals("")) {
 				seddel.insertStartPart(this.decrypt(this.loadinfo), this.decrypt(this.loadinfo),
 						this.decrypt(this.loadinfo));	
+				seddel.insertSlutPart(this.decrypt(this.loadinfo), this.decrypt(this.loadinfo), 
+						this.decrypt(this.loadinfo), this.decrypt(this.loadinfo));
 			}
 			
 		} catch (FileNotFoundException e) {
@@ -56,8 +61,7 @@ public class LoadCommand {
 	
 	public String decrypt(final String text) {
 		int tal = 0;
-		System.out.println(text.substring(tal, tal + 2));
-		while(! text.substring(tal, tal + 2).equals("@@")) {
+		while(! (text.substring(tal, tal + 2).equals("@@") || text.substring(tal, tal + 2).equals("##"))) {
 			tal++;
 		}
 		String onepart = text.substring(0, tal);
