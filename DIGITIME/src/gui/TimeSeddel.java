@@ -49,12 +49,14 @@ public class TimeSeddel extends JTable {
 	
 	public void insertStartPart(final String description, final String dato, final String starttid) {
 		RowInfo row = new RowInfo();
-		row.setDescription(description);
 		row.setDato(dato);
 		row.setStarttid(starttid);
 		this.rows.add(row);
 		
-		this.setValueAt(description, rowcounter, 0);
+		if(this.getValueAt(rowcounter, 0) == null) {
+			row.setDescription(description);
+			this.setValueAt(description, rowcounter, 0);
+		}
 		this.setValueAt(dato, rowcounter, 1);
 		this.setValueAt(starttid, rowcounter, 2);
 		this.repaint();

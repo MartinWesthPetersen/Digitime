@@ -1,7 +1,6 @@
 package gui.kunde;
 
 
-import gui.LokegnOkButtonListener;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -17,6 +16,7 @@ import javax.swing.JTextField;
 
 import listeners.KundeNyListener;
 import listeners.KundeRedigerListener;
+import listeners.LokegnOkButtonListener;
 
 public class Kunder extends JFrame {
 

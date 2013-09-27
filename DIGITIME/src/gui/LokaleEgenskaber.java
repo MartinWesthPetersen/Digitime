@@ -10,6 +10,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import listeners.LokegnOkButtonListener;
+
 public class LokaleEgenskaber extends JFrame {
 
 	private static final long serialVersionUID = 1L;

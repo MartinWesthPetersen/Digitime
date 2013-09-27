@@ -4,7 +4,10 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
+import saveloadactions.LoadListener;
+
 import listeners.KunderListener;
+import listeners.NyTimeSeddelListener;
 
 public final class MenuBar extends JMenuBar {
 

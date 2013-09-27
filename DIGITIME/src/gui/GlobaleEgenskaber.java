@@ -10,6 +10,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import listeners.GlobaleEgenskaberOkButtonListener;
+
 public class GlobaleEgenskaber extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -17,6 +19,8 @@ public class GlobaleEgenskaber extends JFrame {
 	public static final GlobaleEgenskaber instance = new GlobaleEgenskaber();
 	
 	private JTextField takstfield;
+	
+	public JTextField advarselsfield;
 	
 	public GlobaleEgenskaber() {
 		this.setSize(400, 300);
@@ -37,14 +41,27 @@ public class GlobaleEgenskaber extends JFrame {
 		gloegn.add(takstfield);
 		
 		JButton button = new JButton("OK");
-		button.setBounds(30, 80, 80, 30);
+		button.setBounds(30, 150, 80, 30);
 		button.addActionListener(GlobaleEgenskaberOkButtonListener.instance);
 		this.add(button);
-			
+		
+		JLabel advarsellabel = new JLabel("Sæt beløb for advarsel:");
+		advarsellabel.setBounds(30, 80, 200, 30);
+		advarsellabel.setFont(new Font("sansserif",Font.PLAIN,15));
+		gloegn.add(advarsellabel);
+		
+		this.advarselsfield = new JTextField();
+		this.advarselsfield.setBounds(250, 80, 80, 30);
+		gloegn.add(advarselsfield);
+	
 		this.add(gloegn);
 	}
 	
-	public JTextField getTextField() {
+	public JTextField gettakstTextField() {
 		return this.takstfield;
+	}
+	
+	public JTextField getadvarselTextField() {
+		return this.advarselsfield;
 	}
 }

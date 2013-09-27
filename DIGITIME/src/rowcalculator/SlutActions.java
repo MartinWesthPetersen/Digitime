@@ -9,6 +9,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+import listeners.StartStopListener;
+
 import appliction.Application;
 import appliction.RowInfo;
 import appliction.Settings;
@@ -54,7 +56,14 @@ public class SlutActions {
 					return;
 				}
 			}
-			MainFrame.instance.printStatus("");
+			try {
+				if(MainFrame.instance.statuslabel.getText().substring(0, 8) != "Advarsel:") {
+					MainFrame.instance.printStatus("");
+				}
+			}
+			catch(StringIndexOutOfBoundsException e) {
+
+			}
 			int heletimerikroner = (Integer.parseInt(this.timedifference.substring(0, 2)) * takst);
 			int minutterikroner = (Integer.parseInt(this.timedifference.substring(3, 5)) *
 					(takst / 60));
@@ -74,12 +83,35 @@ public class SlutActions {
 
 			try {
 				this.dispbeloeb = Integer.parseInt(panel.getPris().getText()) - totalkroner + "";
-				panel.getTimeSeddel().insertSlutPart(this.time, this.timedifference, this.kroner, this.dispbeloeb);
-				MainFrame.instance.printStatus("");
+				System.out.println(this.dispbeloeb);
+				panel.getTimeSeddel().insertSlutPart(this.time, this.timedifference, 
+						this.kroner, this.dispbeloeb);
+				try {
+					if(Integer.parseInt(this.dispbeloeb) <= 
+							Integer.parseInt(Settings.instance.getAdvarselsbeløb())) {
+						System.out.println("jujooooo");
+						MainFrame.instance.printStatus("Advarsel: Der er kun " + 
+								this.dispbeloeb + " kroner tilbage");
+					}
+					System.out.println("addddd");
+				}
+				catch (NumberFormatException e) {
+
+				}
+
+				try {
+					if(! MainFrame.instance.statuslabel.getText().substring(0, 9).equals("Advarsel:")) {
+						MainFrame.instance.printStatus("");
+					}
+				}
+				catch (StringIndexOutOfBoundsException e) {
+
+				}
 			}
 			catch (NumberFormatException e) {
 				MainFrame.instance.printStatus("Korrekt pris skal indskrives");
 				StartStopListener.instance.start = true;
+				System.out.println("numberformat");
 			}
 		}
 		catch (NumberFormatException e) {

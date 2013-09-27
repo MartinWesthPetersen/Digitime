@@ -8,6 +8,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import listeners.NewTabWizardOkListener;
+
 public class NewTabWizard extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -25,7 +27,7 @@ public class NewTabWizard extends JFrame {
 		panel.setLayout(null);
 		panel.setVisible(true);
 		
-		JLabel label = new JLabel("Navn pÃ¥ tab:");
+		JLabel label = new JLabel("Navn på tab:");
 		label.setBounds(30, 40, 150, 30);
 		panel.add(label);
 		
@@ -43,5 +45,9 @@ public class NewTabWizard extends JFrame {
 	
 	public JTextField getTextField() {
 		return this.text;
+	}
+	
+	public void setTextField(String text) {
+		this.text.setText(text);
 	}
 }

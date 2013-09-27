@@ -1,5 +1,6 @@
 package gui;
 
+
 import java.awt.Color;
 
 import javax.swing.JButton;
@@ -7,6 +8,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+
+import listeners.DescriptionWizardOkButton;
 
 public class DescriptionWizard extends JFrame {
 

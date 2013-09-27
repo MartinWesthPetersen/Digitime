@@ -1,6 +1,6 @@
 package rowcalculator;
 
-import gui.DescriptionWizardOkButton;
+import gui.MainFrame;
 import gui.TimeSeddel;
 import gui.TimeSeddelPanel;
 import gui.TimeSeddelTabs;
@@ -8,6 +8,8 @@ import gui.TimeSeddelTabs;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import listeners.DescriptionWizardOkButton;
 
 import appliction.Application;
 
@@ -23,6 +25,16 @@ public class StartActions {
 	}
 	
 	public void calculate() {
+		String status = MainFrame.instance.statuslabel.getText();
+		try {
+		if(! status.substring(0, 9).equals("Advarsel:")) {
+			MainFrame.instance.printStatus("");
+		}
+		}
+		catch(StringIndexOutOfBoundsException e) {
+			
+		}
+
 		DateFormat dateFormat = new SimpleDateFormat("dd/MM HH:mm");
 		Date date = new Date();
 		String dateandtime = dateFormat.format(date);
@@ -31,7 +43,7 @@ public class StartActions {
 		System.out.println(dato + " " + time);
 		
 		TimeSeddel seddel = Application.instance.getCurrentSeddelPanel().getTimeSeddel();
-		seddel.insertStartPart(DescriptionWizardOkButton.instance.getDescription(), dato, time);
+		seddel.insertStartPart("",dato, time);
 	}
 	
 	public String getDato() {
@@ -40,6 +52,5 @@ public class StartActions {
 	
 	public String getTime() {
 		return this.time;
-	}
-	
+	}	
 }

@@ -5,6 +5,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
 
+import listeners.TabChangeListener;
+
 import appliction.Application;
 
 public class TimeSeddelTabs extends JTabbedPane {
@@ -16,6 +18,7 @@ public class TimeSeddelTabs extends JTabbedPane {
 	public TimeSeddelTabs() {
 		super();
 		this.setBounds(0, 0, 760, 440);
+		this.addChangeListener(TabChangeListener.instance);
 	}
 	
 	public void insertNyTimeseddel() {

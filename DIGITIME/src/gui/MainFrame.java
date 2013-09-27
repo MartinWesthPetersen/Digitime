@@ -8,17 +8,27 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import listeners.GlobaleEgenskaberListener;
+
 public class MainFrame extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	public static final MainFrame instance = new MainFrame();
-	private JLabel statuslabel;
+	public JLabel statuslabel;
 	
 	public MainFrame() {
 		super("DIGITIME");
+		
+		this.statuslabel = new JLabel("");
+		statuslabel.setFont(new Font("Arial", Font.BOLD, 16));
+		statuslabel.setForeground(Color.red);
+		statuslabel.setBounds(250, 507, 450, 30);
+		this.add(statuslabel);
+		
 		this.setSize(800, 600);
 		this.setLocationRelativeTo(null);
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+		this.addWindowListener(Windowadapter.instance);
 		this.setJMenuBar(MenuBar.instance);
 		this.setLayout(null);
 		this.setResizable(false);
@@ -29,11 +39,7 @@ public class MainFrame extends JFrame {
 		globaleegenskaber.addActionListener(GlobaleEgenskaberListener.instance);
 		this.add(globaleegenskaber);
 		
-		this.statuslabel = new JLabel("");
-		statuslabel.setFont(new Font("Arial", Font.PLAIN, 16));
-		statuslabel.setForeground(Color.red);
-		statuslabel.setBounds(250, 507, 450, 30);
-		this.add(statuslabel);
+		
 	
 	}
 	

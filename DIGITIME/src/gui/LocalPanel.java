@@ -9,7 +9,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 
-import rowcalculator.StartStopListener;
+import listeners.LokaleEgenskaberListener;
+import listeners.StartStopListener;
+
 
 public class LocalPanel extends JPanel {
 	
@@ -26,7 +28,6 @@ public class LocalPanel extends JPanel {
 		this.setBounds(20, 0, 760, 495);
 		
 		this.add(TimeSeddelTabs.instance);
-		TimeSeddelTabs.instance.insertNyTimeseddel("TestSeddel");
 		
 		JButton startstop = new JButton("Start/Stop");
 		startstop.setBounds(600, 453, 100, 30);
