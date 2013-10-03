@@ -37,6 +37,6 @@ public class LocalPanel extends JPanel {
 		JButton lokaleegenskaber = new JButton("Lokale egenskaber");
 		lokaleegenskaber.setBounds(40, 453, 150, 30);
 		lokaleegenskaber.addActionListener(LokaleEgenskaberListener.instance);
-		this.add(lokaleegenskaber);
+//		this.add(lokaleegenskaber);
 	}
 }

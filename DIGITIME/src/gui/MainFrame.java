@@ -37,7 +37,7 @@ public class MainFrame extends JFrame {
 		JButton globaleegenskaber = new JButton("Globale egenskaber");
 		globaleegenskaber.setBounds(60, 507, 150, 30);
 		globaleegenskaber.addActionListener(GlobaleEgenskaberListener.instance);
-		this.add(globaleegenskaber);
+//		this.add(globaleegenskaber);
 		
 		
 	

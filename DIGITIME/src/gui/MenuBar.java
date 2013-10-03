@@ -6,6 +6,7 @@ import javax.swing.JMenuItem;
 
 import saveloadactions.LoadListener;
 
+import listeners.GlobaleEgenskaberListener;
 import listeners.KunderListener;
 import listeners.NyTimeSeddelListener;
 
@@ -23,29 +24,28 @@ public final class MenuBar extends JMenuBar {
 	
 	private JMenu addFileMenu() {
 		JMenu menu = new JMenu("Filer");
-		menu.add(this.addExitItem());
-		menu.add(this.addLoadItem());
 		menu.add(this.addNySeddelItem());
+		menu.add(this.addLoadItem());
 		menu.add(this.addSaveItem());
 		return menu;
 	}
 	
 	private JMenu addRedigerMenu() {
 		JMenu menu2 = new JMenu("Rediger");
-		menu2.add(this.addKunderItem());
+		menu2.add(this.addEgenskaberItem());
 		return menu2;
 	}
 	
-	private JMenuItem addKunderItem() {
-		JMenuItem menuitem = new JMenuItem("Kunder");
-		menuitem.addActionListener(KunderListener.instance);
+	private JMenuItem addEgenskaberItem() {
+		JMenuItem menuitem = new JMenuItem("Egenskaber");
+		menuitem.addActionListener(GlobaleEgenskaberListener.instance);
 		return menuitem;
 	}
 
-	private JMenuItem addExitItem() {
-		JMenuItem menuitem = new JMenuItem("Luk");
-		return menuitem;
-	}
+//	private JMenuItem addExitItem() {
+//		JMenuItem menuitem = new JMenuItem("Luk");
+//		return menuitem;
+//	}
 	
 	private JMenuItem addLoadItem() {
 		JMenuItem menuitem = new JMenuItem("Load");
@@ -60,7 +60,7 @@ public final class MenuBar extends JMenuBar {
 	}
 	
 	private JMenuItem addSaveItem() {
-		JMenuItem menuitem = new JMenuItem("Gem");
+		JMenuItem menuitem = new JMenuItem("Save");
 		menuitem.addActionListener(GemListener.instance);
 		return menuitem;
 	}
