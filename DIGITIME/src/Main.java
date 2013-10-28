@@ -8,11 +8,15 @@ import java.util.Collections;
 import rowcalculator.SlutActions;
 import gui.MainFrame;
 
+/*
+2. Der skal indføres et system som gemmer alle åbne timesedler som igangværende, når programmet lukkes, 
+og som automatisk åbnes når programmet åbnes igen. 	
 
+*/
 public class Main {
 
 	public static void main(String[] args) {
-		MainFrame.instance.setVisible(true);
+		MainFrame.instance.setVisible(true);			
 	}
 }
 

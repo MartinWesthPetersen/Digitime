@@ -9,8 +9,6 @@ public class Windowadapter extends WindowAdapter {
 
 	@Override
 	public void windowClosing(WindowEvent we) {
-		System.out.println("hejssa");
-		
-		System.exit(0);
+		CloseProgramReminder.instance.setVisible(true);
 	}
 }
