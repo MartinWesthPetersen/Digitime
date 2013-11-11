@@ -18,7 +18,7 @@ public class GlobaleEgenskaber extends JFrame {
 
 	public static final GlobaleEgenskaber instance = new GlobaleEgenskaber();
 	
-	private JTextField takstfield;
+	public JTextField takstfield;
 	
 	public JTextField advarselsfield;
 	

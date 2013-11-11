@@ -24,6 +24,8 @@ og som automatisk åbnes når programmet åbnes igen.
 
 2 Man skal kunne lukke en timseddel.
 
+7 Timetakst og pris parser skal måske indføres.
+
 */
 public class Main {
 

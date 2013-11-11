@@ -43,19 +43,15 @@ public class SlutActions {
 		int takst = 0;
 
 		try {
-			if(panel.getTimeSeddel().getTakst() != "") {
-				takst = Integer.parseInt(panel.getTimeSeddel().getTakst());
+			if(Settings.instance.getStandardtakst() != "") {
+				takst = Integer.parseInt(Settings.instance.getStandardtakst());
 			}
 			else {
-				if(Settings.instance.getStandardtakst() != "") {
-					takst = Integer.parseInt(Settings.instance.getStandardtakst());
-				}
-				else {
-					MainFrame.instance.printStatus("Korrekt global eller lokal timetakst skal indskrives");
-					StartStopListener.instance.start = true;
-					return;
-				}
+				MainFrame.instance.printStatus("Korrekt timetakst skal indskrives");
+				StartStopListener.instance.start = true;
+				return;
 			}
+
 			try {
 				if(MainFrame.instance.statuslabel.getText().substring(0, 8) != "Advarsel:") {
 					MainFrame.instance.printStatus("");
@@ -115,7 +111,7 @@ public class SlutActions {
 			}
 		}
 		catch (NumberFormatException e) {
-			MainFrame.instance.printStatus("Korrekt global eller lokal timetakst skal indskrives");
+			MainFrame.instance.printStatus("Korrekt timetakst skal indskrives");
 			StartStopListener.instance.start = true;
 		}
 
