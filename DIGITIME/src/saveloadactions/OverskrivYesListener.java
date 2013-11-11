@@ -12,5 +12,10 @@ public class OverskrivYesListener implements ActionListener{
 		new SaveCommand().executecontinue(OverskrivFilWindow.instance.filename);
 		OverskrivFilWindow.instance.dispose();
 	}
+	
+	public void save() {
+		new SaveCommand().executecontinue(OverskrivFilWindow.instance.filename);
+		OverskrivFilWindow.instance.dispose();
+	}
 
 }

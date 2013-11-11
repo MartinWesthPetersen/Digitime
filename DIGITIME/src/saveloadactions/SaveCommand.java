@@ -10,9 +10,11 @@ import java.util.ArrayList;
 
 import appliction.Application;
 import appliction.RowInfo;
+import gui.GemListener;
 import gui.MainFrame;
 import gui.TimeSeddel;
 import gui.TimeSeddelPanel;
+import gui.TimeSeddelTabs;
 
 public class SaveCommand {
 
@@ -20,6 +22,7 @@ public class SaveCommand {
 
 	public SaveCommand() {
 		this.seddelpanel = Application.instance.getCurrentSeddelPanel();
+		SaveWizard.instance.getTextField().setText("");
 		SaveWizard.instance.setVisible(true);
 	}
 
@@ -60,6 +63,9 @@ public class SaveCommand {
 			SaveWizard.instance.dispose();
 
 			MainFrame.instance.printStatus("Timeseddel gemt");
+			if (GemListener.instance.andclose) {
+				TimeSeddelTabs.instance.removeTabAt(TimeSeddelTabs.instance.getSelectedIndex());
+			}
 		}
 		catch (IOException e) {
 			e.printStackTrace();

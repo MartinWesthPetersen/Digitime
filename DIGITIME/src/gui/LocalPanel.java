@@ -1,6 +1,7 @@
 package gui;
 
 import java.awt.Color;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
@@ -33,6 +34,11 @@ public class LocalPanel extends JPanel {
 		startstop.setBounds(600, 453, 100, 30);
 		startstop.addActionListener(StartStopListener.instance);
 		this.add(startstop);
+		
+		JButton close = new JButton("Arkivér og luk timeseddel");
+		close.setBounds(30, 453, 200, 30);
+		close.addActionListener(CloseTimeseddelListener.instance);
+		this.add(close);
 		
 		JButton lokaleegenskaber = new JButton("Lokale egenskaber");
 		lokaleegenskaber.setBounds(40, 453, 150, 30);

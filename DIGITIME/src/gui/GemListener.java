@@ -10,10 +10,12 @@ public class GemListener implements ActionListener {
 	
 	public static final GemListener instance = new GemListener();
 	public SaveCommand savecommand;
+	public boolean andclose = false;
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		this.savecommand = new SaveCommand();
+		CloseTimeseddelWarning.instance.dispose();
 	}
 
 }
