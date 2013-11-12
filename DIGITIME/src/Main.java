@@ -22,8 +22,6 @@ og som automatisk åbnes når programmet åbnes igen.
 
 7 Timetakst og pris parser skal måske indføres.
 
-2.5 Man skal kunne slette en række i en timeseddel.
-
 6 Man skal kunne markere en timeseddel som afsluttet så den ikke loades ved opstart.
 
 */
