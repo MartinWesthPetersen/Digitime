@@ -1,6 +1,8 @@
 package gui;
 
 import java.awt.Graphics;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.ArrayList;
 
 import javax.swing.JTable;
@@ -9,11 +11,11 @@ import javax.swing.table.DefaultTableModel;
 import appliction.Application;
 import appliction.RowInfo;
 
-public class TimeSeddel extends JTable {
+public class TimeSeddel extends JTable implements KeyListener {
 	 
 	private static final long serialVersionUID = 1L;
 	private ArrayList<RowInfo> rows;
-	private int rowcounter=0;
+	public int rowcounter=0;
 	private String takst;
 
 	public TimeSeddel() {
@@ -22,7 +24,7 @@ public class TimeSeddel extends JTable {
 			
 			@Override
 			public boolean isCellEditable(int row, int column) {
-				return column == 0;
+				return true;
 			}
 		};
 		this.setModel(model);
@@ -32,6 +34,8 @@ public class TimeSeddel extends JTable {
 //		this.setBorder(blackline);
 		this.setAutoResizeMode(JTable.AUTO_RESIZE_LAST_COLUMN);
 		this.takst = "";
+		addKeyListener(this);
+		
 
 	}
 	
@@ -86,5 +90,25 @@ public class TimeSeddel extends JTable {
 	
 	public ArrayList<RowInfo> getRowInfos() {
 		return this.rows;
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		if (e.getKeyCode() == KeyEvent.VK_DELETE) {
+			DeleteRow.instance.rownumber = this.getSelectedRow();
+			DeleteRow.instance.setVisible(true);
+		}
+	}
+
+	@Override
+	public void keyReleased(KeyEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyTyped(KeyEvent arg0) {
+		// TODO Auto-generated method stub
+		
 	}
 }

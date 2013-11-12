@@ -14,25 +14,25 @@ import listeners.DescriptionWizardOkButton;
 import appliction.Application;
 
 public class StartActions {
-	
+
 	public static final StartActions instance = new StartActions();
-	
+
 	private String dato;
 	private String time;
 
 	public StartActions() {
-	
+
 	}
-	
+
 	public void calculate() {
 		String status = MainFrame.instance.statuslabel.getText();
 		try {
-		if(! status.substring(0, 9).equals("Advarsel:")) {
-			MainFrame.instance.printStatus("");
-		}
+			if(! status.substring(0, 9).equals("Advarsel:")) {
+				MainFrame.instance.printStatus("");
+			}
 		}
 		catch(StringIndexOutOfBoundsException e) {
-			
+
 		}
 
 		DateFormat dateFormat = new SimpleDateFormat("dd/MM HH:mm");
@@ -40,16 +40,15 @@ public class StartActions {
 		String dateandtime = dateFormat.format(date);
 		this.dato = dateandtime.substring(0, 5);
 		this.time = dateandtime.substring(6, 11);
-		System.out.println(dato + " " + time);
-		
+
 		TimeSeddel seddel = Application.instance.getCurrentSeddelPanel().getTimeSeddel();
 		seddel.insertStartPart("",dato, time);
 	}
-	
+
 	public String getDato() {
 		return this.dato;
 	}
-	
+
 	public String getTime() {
 		return this.time;
 	}	
