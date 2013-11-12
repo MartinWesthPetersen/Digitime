@@ -16,8 +16,6 @@ og som automatisk åbnes når programmet åbnes igen.
 
 4 Ved lukning af programmet skal der tjekkes om sluttid er skrevet.
 
-3 Man skal kun kunne loade den samme fil een gang.
-
 5 Husk-at-lukke-sedler boksen skal have mulighed for at disables. (checkbox)
 
 7 Timetakst og pris parser skal måske indføres.

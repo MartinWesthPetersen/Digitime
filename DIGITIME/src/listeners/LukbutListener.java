@@ -12,7 +12,6 @@ public class LukbutListener implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		Closedown.instance.execute();
-		System.exit(0);
 	}
 
 }
